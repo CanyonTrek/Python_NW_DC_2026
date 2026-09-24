@@ -12,16 +12,15 @@ import glob
 home = ""
 
 if sys.platform == "win32":
-    home = os.environ["HOMEPATH"]
+    home = os.environ["HOMEDRIVE"] + os.environ["HOMEPATH"]
 elif sys.platform == "linux":
     home = os.environ["HOME"]
-
 
 files = glob.glob(os.path.join(home, "*")) # Return list of files/dirs
 print(files)
 
 # ITERATE through the files/dirs using an ITERATOR for loop
-for file in glob.glob(os.path.join(home, "*")):
+for file in glob.iglob(os.path.join(home, "*")):
     print(file)
 
 
