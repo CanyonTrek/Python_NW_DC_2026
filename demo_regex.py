@@ -31,7 +31,7 @@ for line in fh_in:
     # m = re.search(r"^[A-Z].*[A-Z]$", line)  # Match lines start/end with a CAPITAL
     # m = re.search(r"^[A-Z].{4}[A-Z]$", line)  # Match lines of 6 chars start/end with a CAPITAL
     # m = re.search(r"rhubarb|gooseberry|pineapple", line)  # Match lines with ONE of these patterns
-    m = re.search(r"^(.)(.).\2\1$", line)  # Match lines of 5 char palindromes
+    m = re.search(r"^(.)(.).\2\1$", line, flags=re.IGNORECASE)  # Match lines of 5 char palindromes
     # m = re.search(r"^([A-Z]).*\1$", line)  # Match lines start/end SAME CAPITAL
     # m = re.match(r"([A-Z]).*\1$", line)  # match() auto matches LINES starting with
     # m = re.fullmatch(r"^([A-Z]).*\1\n$", line)  # Match ENTIRE text incl hidden chars
