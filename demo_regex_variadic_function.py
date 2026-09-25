@@ -2,15 +2,17 @@
 # Author: DCameron
 # Version: 1.0
 # Description: This script will demo HOWTO define a VARIADIC function
-# which is a function that allows variable number of paremeters
+# which is a function that allows variable number of parameters
 """
-    DocString
+    Module containing functions for searching for Regex patterns
+    in one or more files....
 """
 import re
 
 # Example of a VARIADIC function that allows a variable
 # number of parameters into a TUPLE
 def search_pattern(pattern: str = r"^(.)(.).\2\1$", *files) -> int:
+    """ Search files for Regex pattern and return num lines matched  """
     lines = 0
     for file in files:
         fh_in = open(file, mode="rt")
