@@ -19,10 +19,17 @@ def sqrt(x):
     """ Return square root of x as a float """
     return float(x ** 0.5)
 
-print("------------ ADVANCED CALC ------------")
-print(f"100 % 30 = {mod(100, 30)}")
-print(f"4 ** 3 = {power(4, 3)}")
-print(f"\N{square root}100 = {sqrt(100)}")
-print("----------------------------------------")
+def main():
+    print("------------ ADVANCED CALC ------------")
+    print(f"100 % 30 = {mod(100, 30)}")
+    print(f"4 ** 3 = {power(4, 3)}")
+    print(f"\N{square root}100 = {sqrt(100)}")
+    print("----------------------------------------")
+    return None
 
-sys.exit(0)
+# Namespace Trick
+if __name__ == "__main__":
+    # Execute ONLY if ran directly as a program
+    # Ignore if imported as a module
+    main()
+    sys.exit(0) # Exit and return exit code (0=success, 1-255=error)
